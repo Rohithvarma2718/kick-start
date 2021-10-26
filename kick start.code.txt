@@ -1,0 +1,23 @@
+testcase=int(input("ENTER THE NUMBER OF TEST CASES YOU WANT: "))
+inputs=[]
+print("ENTER THE CASES ONE BY ONE","\n")
+for i in range(0,testcase):
+    inputs.append(input())
+for i in range(0,testcase):
+    word=inputs[i]
+    kick_liss=[]
+    start_liss=[]
+    count=0
+    word=word.upper()
+    for j in range(0,len(word)):
+        if word[j:j+4]=="KICK":
+            kick_liss.append(j)
+        if word[j:j+5]=="START":
+            start_liss.append(j)     
+    
+    for l in kick_liss:
+        for k in start_liss:
+            if l < k:
+                count=count+1
+    
+    print("case #",i+1,":",count)
